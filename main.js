@@ -20,3 +20,23 @@ const ORANGECOLOR = '#FR20';
 const BLUECOLOR = '#RGB5'
 let color = REDCOLOR;
 console.log (color);
+/* alert(a>c);
+let result = 5 > 4;
+alert( result ); */
+
+
+
+ /*  let message = (login == ('Сотрудник')) ? 'Привет':
+  (login == 'Директор') ? 'Здравствуйте':
+  (login == '') ? 'Нет логина':
+  ''; */
+ function showMessage() {
+console.log ('Сообщение!');
+ }
+showMessage();
+showMessage();
+showMessage();
+showMessage();
+
+
+  
