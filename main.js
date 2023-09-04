@@ -148,7 +148,7 @@ for (var i = 0; i < arr.length; i++) {
     console.log('Элемент ' + (i + 1) + ': ' + arr[i]);
 } */
 
-function info(word) {
+/* function info(word) {
    
     console.log(word + 'Hi!');
     console.log('Hi!!!!!');
@@ -173,4 +173,35 @@ var array_3 = [6, 8, 1, 90];
 
 summa(array);
 summa(array_2);
-summa(array_3);
+summa(array_3); */
+
+/* function checkAge(age) {
+    if(age < 18) {
+    console.log('you are not allowed');
+    }
+    else if(age >= 18) {
+        console.log('you are welcome!');
+    
+    }
+    else {
+alert('lox');
+    }
+}
+
+
+/* checkAge(NaN); 
+function checkAge(age) {
+	if (age >= 18) { return true;} 
+	else { return confirm('А родители разрешили?');} 
+}
+
+checkAge(19); */
+
+function calc(opertion, a = 1, b = 2) {
+    return a + b;
+    
+}
+
+console.log(calc('add', 1, 2));
+сalc(‘multi’, 1, 2);
+сalc(’subtract’, 3, 2);
