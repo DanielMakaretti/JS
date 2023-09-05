@@ -197,11 +197,87 @@ function checkAge(age) {
 
 checkAge(19); */
 
-function calc(opertion, a = 1, b = 2) {
+/* function calc(opertion, a = 1, b = 2) {
     return a + b;
     
 }
 
 console.log(calc('add', 1, 2));
 сalc(‘multi’, 1, 2);
-сalc(’subtract’, 3, 2);
+сalc(’subtract’, 3, 2); */
+
+/* let a = prompt('Сколько будет 2 + 2?');
+let a = 2 + 2;
+switch (a) {
+  case 3:
+    alert( 'Маловато' );
+    break;
+  case 4:
+    alert( 'В точку!' );
+    break;
+  case 5:
+    alert( 'Перебор' );
+    break;
+  default:
+    alert( "Нет таких значений" );
+} */
+
+/* let i = 1;
+
+do {
+  console.log(i);
+	i = i + 1;
+} while (i < 19); */
+
+/* let i = 1;
+for (; i < 10; i++) {
+    console.log(i)
+} */
+
+/* for (; i < 10;) {
+    console.log(i);
+    i = i + 1;
+} */
+/* 
+for (let i = 1; i < 19; i++) {
+    console.log(i)
+    break;
+} */
+
+/* while (true) {
+	console.log('начало');
+	break;
+  console.log('конец, который не случится');
+}
+console.log('конец'); */
+
+/* for (let i = 0; i < 10; i++) {
+    if (i % 2 == 0) continue;
+    console.log(i);
+} */
+
+/* const phoneBook = {
+    'John': 89048614779,
+    'Adam': 89047693237,
+    'Liza': 89053432324,
+    
+}
+phoneBook['Adam'] = 99999999;
+console.log(phoneBook['Adam']); */
+
+const phoneBook = {
+    list: {
+        'John': 89048614779,
+        'Adam': 89047693237,
+        'Liza': 89053432324
+    },
+    last: {
+        'John': 890486414779,
+        'Adam': 89047695555555,
+        'Liza': 89053432324
+    },
+    log() {
+        console.log(this.last)
+    }
+}
+phoneBook.log();
