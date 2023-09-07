@@ -265,7 +265,7 @@ console.log('конец'); */
 phoneBook['Adam'] = 99999999;
 console.log(phoneBook['Adam']); */
 
-const phoneBook = {
+/* const phoneBook = {
     list: {
         'John': 89048614779,
         'Adam': 89047693237,
@@ -279,5 +279,45 @@ const phoneBook = {
     log() {
         console.log(this.last)
     }
+    
 }
-phoneBook.log();
+delete fullName[list]; */
+
+/* var date = new Date();
+
+console.log(date.getFullYear());
+console.log(date.getMonth()+1);
+console.log(date.getDate());
+console.log('Time: ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds());
+console.log('Date: ' + date.getFullYear() + ':' + (date.getMonth()+1) + ':' + date.getDate());
+'Date: ' + date.setHours(23);
+console.log(date.getHours());
+console.log(date.getMinutes());
+console.log(date.getSeconds()); */
+
+/* var arrow = [90, 87, 79, 1, 2, 3, 4];
+var stroka = arrow.reverse().join('||');
+
+console.log(stroka.split(', ')); */
+
+class Person {
+    constructor(name, age, happiness, want_suicide) {
+        this.name = name;
+        this.age = age;
+        this.happiness = happiness;
+        this.want_suicide = want_suicide;
+    }
+    info() {
+        console.log('Man - ' + this.name + ': ' + 'AGE: ' + this.age + '; ' + 'HaPPi: '
+         + this.happiness + '; ' + 'want suicid: ' 
+         + this.want_suicide + '.');
+    }
+}
+var alex = new Person('Alex', 45, true, 0);
+var bob = new Person('Bob', 15, false, 90);
+
+alex.info();
+bob.info();
+
+/* console.log(alex.age);
+console.log(bob.happiness); */
