@@ -300,7 +300,7 @@ var stroka = arrow.reverse().join('||');
 
 console.log(stroka.split(', ')); */
 
-class Person {
+/* class Person {
     constructor(name, age, happiness, want_suicide) {
         this.name = name;
         this.age = age;
@@ -317,7 +317,83 @@ var alex = new Person('Alex', 45, true, 0);
 var bob = new Person('Bob', 15, false, 90);
 
 alex.info();
-bob.info();
+bob.info(); */
 
 /* console.log(alex.age);
 console.log(bob.happiness); */
+
+/* const phoneBook = {
+	list: {
+		"John": 123456789,
+		"Jane Doe": 987654321,
+		"Jim Smith": 111111111
+	}
+};
+
+if (phoneBook.list.John) { // свойство существует
+	console.log('John is here!'); // John is here!
+}
+if (phoneBook.list["Jane Doe"]) {
+    console.log('John is HERE!');
+}
+if (phoneBook.list.HEY) {
+    console.log('azaza');
+}
+
+if (phoneBook.list.Art) { // свойства не существует
+	console.log('Art is here!');
+}
+
+console.log(phoneBook.list.Art);
+console.log(phoneBook.list.HEY); */
+
+/* const phoneBook = {
+    list: {
+      "John": 123456789,
+      "Jane Doe": 987654321,
+      "Jim Smith": 111111111
+    },
+  };
+  
+  for (const name in phoneBook.list) {
+    console.log('(' + name + ' - ' + phoneBook.list[name] + ')'); // John
+  } */
+
+  const allist = {
+    list: {
+    'create a new practicle tast': 'In Progress',
+    'make a bed': 'Done',
+    'write a post': 'To Do',
+    },
+  };
+  let user = 'In Progress';
+function changeStatus() {
+    let user = 'To do';
+}
+
+let user2 = '"create a new practice task"';
+function addTask() {
+    let user2 = '"create a new practice task"';
+}
+    console.log(user2 + ': ' + user);
+
+changeStatus(user);
+
+let usera = 'Done';
+function changeStatus() {
+    let usera = 'To do';
+}
+
+let usera2 = '"make a bed"';
+function addTask() {
+    let usera2 = '"make a bed"';
+}
+    console.log(usera2 + ': ' + usera);
+
+changeStatus();
+
+
+
+/*  if (allist.list['create a new practicle tast']) {
+    console.log(allist.list['In Prigress']); 
+  } */
