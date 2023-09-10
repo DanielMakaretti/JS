@@ -361,39 +361,87 @@ console.log(phoneBook.list.HEY); */
 
   const allist = {
     list: {
-    'create a new practicle tast': 'In Progress',
+    'create a new practicle task': 'In Progress',
     'make a bed': 'Done',
     'write a post': 'To Do',
     },
   };
-  let user = 'In Progress';
+ if (
+    
+  let user = (allist.list["create a new practicle task"]);
 function changeStatus() {
-    let user = 'To do';
+    user = (allist.list["write a post"]);
 }
+changeStatus(user)
+console.log('create a new practicle task' + ': ' + user);
 
-let user2 = '"create a new practice task"';
-function addTask() {
-    let user2 = '"create a new practice task"';
+let user2 = (allist.list["make a bed"]);
+function changeStatus() {
+    user = (allist.list["write a post"]);
 }
-    console.log(user2 + ': ' + user);
+changeStatus(user2)
+console.log('make a bed' + ': ' + user);
 
-changeStatus(user);
+let user3 = (allist.list["write a post"]);
+function changeStatus() {
+    progress = (allist.list["create a new practicle task"]);
+}
+changeStatus(user2)
+console.log('write a post' + ': ' + progress);
+ ) {
+    console.log('Nothing is Done');
+ }
 
-let usera = 'Done';
+
+/* let usera = 'Done';
 function changeStatus() {
     let usera = 'To do';
 }
-
+changeStatus();
 let usera2 = '"make a bed"';
 function addTask() {
     let usera2 = '"make a bed"';
 }
     console.log(usera2 + ': ' + usera);
 
-changeStatus();
+ */
 
 
 
 /*  if (allist.list['create a new practicle tast']) {
     console.log(allist.list['In Prigress']); 
-  } */
+  } 
+  const allist = {
+    list: {
+    'create a new practicle tast': 'In Progress',
+    'make a bed': 'Done',
+    'write a post': 'To Do',
+    },
+
+  };
+  function changeStatus() {
+    let (allist.list["create a new practicle tast"]) = 'To do';
+} 
+var status1 = 'In Progress'; 
+  let status2 = 'Done';
+  let status3 = 'To Do'
+  let task1 = 'create a new practicle tast:';
+  let task2 = 'make a bed:';
+  let task3 = 'write a post:';
+ 
+ 
+ if (task1 = status1) {
+    console.log('"create a new practice task": In Progress');
+  }
+  else if (task1 != status1 || task2 != status2) {
+    console.log(task1 + status3)
+  }
+else {
+    function changeStatus() {
+        var status1 = 'To do';
+    } 
+
+changeStatus(); */
+
+
+
