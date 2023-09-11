@@ -359,38 +359,42 @@ console.log(phoneBook.list.HEY); */
     console.log('(' + name + ' - ' + phoneBook.list[name] + ')'); // John
   } */
 
-  const allist = {
+/*   const allist = {
     list: {
     'create a new practicle task': 'In Progress',
     'make a bed': 'Done',
     'write a post': 'To Do',
     },
   };
- if (
-    
-  let user = (allist.list["create a new practicle task"]);
-function changeStatus() {
+ 
+   let user = (allist.list["create a new practicle task"]);
+function changeStatus(name) {
     user = (allist.list["write a post"]);
 }
-changeStatus(user)
+changeStatus(user);
 console.log('create a new practicle task' + ': ' + user);
 
 let user2 = (allist.list["make a bed"]);
 function changeStatus() {
-    user = (allist.list["write a post"]);
+    user2 = (allist.list["write a post"]);
 }
-changeStatus(user2)
-console.log('make a bed' + ': ' + user);
+changeStatus(user2);
+console.log('make a bed' + ': ' + user2);
 
 let user3 = (allist.list["write a post"]);
 function changeStatus() {
-    progress = (allist.list["create a new practicle task"]);
+    user = (allist.list["create a new practicle task"]);
 }
-changeStatus(user2)
-console.log('write a post' + ': ' + progress);
- ) {
-    console.log('Nothing is Done');
- }
+changeStatus(user3) ;
+console.log('write a post' + ': ' + user);
+function addTask() {
+    const greeting = 'www:';
+    console.log(greeting);
+}
+addTask() */
+   
+    
+ 
 
 
 /* let usera = 'Done';
@@ -443,5 +447,48 @@ else {
 
 changeStatus(); */
 
+/* 
+function addRecord(key, value) { // функция принимает ключ и значение
+	this.list[key] = value; // у объекта, который вызвал функцию, в свойстве list свойству [key] присваиваем value 
+}
 
+const phoneBook = { // создадим книгу контактов
+  list: { 
+    "John": 123456789,
+    "Jane Doe": 987654321,
+  },
+	addRecord // добавляем объекту функцию addRecord
+};
 
+const toDoList = {  // создадим туду лист
+	list: {
+		"make a video": "open",
+	},
+	addRecord // добавляем объекту функцию addRecord
+}
+
+// теперь можно вызвать toDoList.addRecord с аргументами key и value
+toDoList.addRecord('do something', 'open'); // в этот момент в addRecord - this === toDoList
+console.log(toDoList.list); // { 'make a video': 'open', 'do something': 'open' } */
+
+/* function sum(n, c) {
+    return n + c
+}
+sum(4, 2); */
+
+/* const sum = (a, b) => a + b;
+sum(1, 2);
+
+const timestamp = () => console.log(new Date()); // new Date() - возвращает текущую дату и время
+timestamp(); */
+/* let sum = (a, b) => { // открывающая скобка
+	if (!a || !b) {
+		return undefiend;
+	}
+	return a + b; // фигурные скобки обязывают использовать return
+} // закрывающая скобка
+
+sum(1, 2); // 3
+sum(1); // undefined */
+
+console.log(0.3 === );
