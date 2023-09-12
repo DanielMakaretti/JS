@@ -359,7 +359,7 @@ console.log(phoneBook.list.HEY); */
     console.log('(' + name + ' - ' + phoneBook.list[name] + ')'); // John
   } */
 
-/*   const allist = {
+  const allist = {
     list: {
     'create a new practicle task': 'In Progress',
     'make a bed': 'Done',
@@ -367,36 +367,18 @@ console.log(phoneBook.list.HEY); */
     },
   };
  
-   let user = (allist.list["create a new practicle task"]);
-function changeStatus(name) {
-    user = (allist.list["write a post"]);
-}
-changeStatus(user);
-console.log('create a new practicle task' + ': ' + user);
 
-let user2 = (allist.list["make a bed"]);
-function changeStatus() {
-    user2 = (allist.list["write a post"]);
-}
-changeStatus(user2);
-console.log('make a bed' + ': ' + user2);
-
-let user3 = (allist.list["write a post"]);
-function changeStatus() {
-    user = (allist.list["create a new practicle task"]);
-}
-changeStatus(user3) ;
-console.log('write a post' + ': ' + user);
-function addTask() {
-    const greeting = 'www:';
-    console.log(greeting);
-}
-addTask() */
+function changeStatus(task, status) {
    
-    
- 
+    console.log(task + ': ' + status);
+   
+}
+changeStatus('create a new practice task', 'To do');
+changeStatus('make a bed', 'To do');
+changeStatus('write a post', 'In Progress');
+showList('To Do', 'In Progress', 'Done',)
 
-
+   
 /* let usera = 'Done';
 function changeStatus() {
     let usera = 'To do';
@@ -491,4 +473,14 @@ timestamp(); */
 sum(1, 2); // 3
 sum(1); // undefined */
 
-console.log(0.3 === );
+/* function showVerticalMessage() {
+    let strada = `
+    s
+    t
+    r
+    a
+    d
+    a`
+    console.log(strada);
+}
+showVerticalMessage(strada); */
