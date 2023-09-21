@@ -30,10 +30,36 @@ console.log('Задача ' + key + ', со статусом - ' + status + ', �
     console.log('задачи - ' + key + ', со статусом - ' + status + ' нет в списке');
   }
 }
-function showList() {
   
-}
-addTask('wash the floors', 'Done');
-changeStatus('create a new practice task', 'To Do');
-deleteTask('wash the floors', 'Done');
+function showList() {
+  const StatusToDO = {
+    ToDo: {},
+    InProgress: {},
+    Done: {},
+   
+  };
+ for (const key in this.list) {
+  let statuswhow = this.list[key];
+  StatusToDO[statuswhow][key] = '';
+ }
+  for (const status in StatusToDO) {
+    console.log(status + ': ');
 
+    let taskExist = false;
+    for(const task in StatusToDO[status]) {
+      taskExist = true;
+      console.log('  ' + task);
+    }
+    if (!taskExist) {
+      console.log('   -');
+    }
+  }
+
+};
+
+changeStatus('create a new practice task', 'To Do');
+changeStatus('make a bed', 'To Do');
+changeStatus('write a post', 'In Progress');
+deleteTask('wash the floors', 'Done');
+addTask('wash the floors', 'Done');
+showList();
