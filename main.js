@@ -1,8 +1,8 @@
 const allist = {
   list: {
-    "create a new practice task": "In Progress", 
-    "make a bed": "Done", 
-    "write a post": "To Do",
+    "create a new practice task": 'In Progress', 
+    "make a bed": 'Done', 
+    "write a post": 'To Do',
   },
 };
 function changeStatus(key, status) {
@@ -30,36 +30,66 @@ console.log('Задача ' + key + ', со статусом - ' + status + ', �
     console.log('задачи - ' + key + ', со статусом - ' + status + ' нет в списке');
   }
 }
+function deleteTask(key, status) {
+  if (key in allist.list) {
+    allist.list[key] = status;
+    delete status;
+console.log('Задача ' + key + ', со статусом - ' + status + ', удалена');
+  }
+  else {
+    console.log('задачи - ' + key + ', со статусом - ' + status + ' нет в списке');
+  }
+}
   
 function showList() {
-  const StatusToDO = {
-    ToDo: {},
-    InProgress: {},
-    Done: {},
-   
-  };
- for (const key in this.list) {
-  let statuswhow = this.list[key];
-  StatusToDO[statuswhow][key] = '';
- }
-  for (const status in StatusToDO) {
-    console.log(status + ': ');
+  let q = 0;
+  let i = 0;
+  let x = 0;
 
-    let taskExist = false;
-    for(const task in StatusToDO[status]) {
-      taskExist = true;
-      console.log('  ' + task);
-    }
-    if (!taskExist) {
-      console.log('   -');
-    }
+ for (let key in allist.list) {
+  if(allist.list[key] === 'Done' && q < 1) {
+    q++;
+    console.log(`${[key]} : ${allist.list[key]}`);
   }
 
+ 
+ };
+ for (let key in allist.list) {
+    if(allist.list[key] === 'In Progress' && i < 1) {
+      i++;
+      console.log(`${[key]} : ${allist.list[key]}`);
+    }
+   
+  };
+  for (let key in allist.list) {
+    if(allist.list[key] === 'To Do' && x < 1) {
+      x++;
+      console.log(`${[key]} : ${allist.list[key]}`);
+    }
+    else if(allist.list[key] === 'To Do' && x >= 1) {
+      x++;
+      console.log(`${[key]} : ${allist.list[key]}`);
+    }
+ 
+
+}
+if (x === 0) {
+  console.log('Nothing is done');
+}
+else if (i === 0) {
+  console.log('Nothing is done');
+}
+else if (q === 0) {
+  console.log('Nothing is done');
+}
 };
+ 
+
 
 changeStatus('create a new practice task', 'To Do');
 changeStatus('make a bed', 'To Do');
 changeStatus('write a post', 'In Progress');
-deleteTask('wash the floors', 'Done');
-addTask('wash the floors', 'Done');
+addTask('wash the floors', 'To Do');
+deleteTask('wash the floors', 'To Do');
+
 showList();
