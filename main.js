@@ -51,11 +51,19 @@ function showList() {
     q++;
     console.log(`${[key]} : ${allist.list[key]}`);
   }
+  else if(allist.list[key] === 'Done' && q >= 1) {
+    q++;
+    console.log(`${[key]} : ${allist.list[key]}`);
+  }
 
  
  };
  for (let key in allist.list) {
     if(allist.list[key] === 'In Progress' && i < 1) {
+      i++;
+      console.log(`${[key]} : ${allist.list[key]}`);
+    }
+    else if(allist.list[key] === 'In Progress' && i >= 1) {
       i++;
       console.log(`${[key]} : ${allist.list[key]}`);
     }
@@ -91,5 +99,8 @@ changeStatus('make a bed', 'To Do');
 changeStatus('write a post', 'In Progress');
 addTask('wash the floors', 'To Do');
 deleteTask('wash the floors', 'To Do');
+addTask('wash the floors', 'Done');
+addTask('washdfdfd the floors', 'To Do');
+deleteTask('washdfdfd the floors', 'To Do');
 
 showList();
