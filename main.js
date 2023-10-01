@@ -2,43 +2,63 @@ const list = [
 	{name: 'create a post', status: 'In progress', priority: 'low'}, 
   {name: 'test', status: 'Done', priority: 'high'} 
 ];
-function addTask(number, number2, name){
-    const NewTask = list.map(NewTask => NewTask.name);
-    NewTask.splice(number, number2, name);
-    var result = NewTask.map(item => {
-      if(item === 'create a post') {
+
+  list.forEach((object, index) => {
+    if(object.name === 'create a post') {
+    let NewDone = list[index].status;
+    NewDone = 'Done';
+     let NewHigh = list[index].priority;
+     NewHigh = 'high';
+      
+    }
+    else if(object.name === 'test'){
+      NewProgress = list[index].status;
+      NewProgress = 'It Progress';
+    }
+  });
+
+    const NewArray2 = list.splice(2, 0, {
+      name:'sex',
+      status: 'Done',
+      priority: 'medium'
+    });
+    console.log(NewArray2);
+  /*   const NewArray = list.map(task => {
+      if(task === 'sex') {
         return {
-          name: item,
-          status: 'In progress',
-          priority: 'low'
-        };
+          name: 'sex',
+          status: 'Done',
+          priority: 'medium'
+        }
       }
-        else if(item === 'test') {
+        else if(task === 'test') {
           return {
-            name: item,
+            name: 'test',
             status: 'Done',
             priority: 'high'
-          };
+          }
         }
         else {
           return {
-            name: item,
-            status: 'To do',
-            priority: 'Medium'
-          };
-        };
+            name: 'create a post',
+            status: 'In progress',
+            priority: 'low'
+          }
+        }
       });
- 
-      console.log(result);
-    };
-    
-   
-    
-    function deleteTask(index, numeric) {
-      let deletetask = list.splice(index, numeric);
-      console.log(deletetask);
-    }
+      
+      console.log(NewArray); */
   
-
-addTask(2, 0, 'sex');
-deleteTask(2, 1);
+ 
+   
+ 
+   /*function deleteTask(index, numeric) {
+    let result = addTask(2, 1, 'sex');
+      let deletetask = result.splice(index, numeric);
+      if(deleteTask = result.splice(index, numeric)){
+      console.log(deletetask);
+      }
+      else {
+        console.log('Таких объектов в массиве нет');
+      }
+    };  */
