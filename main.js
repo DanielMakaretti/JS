@@ -10,30 +10,46 @@ let NewArray2 = {name: 'horror', status: 'Done', priority: 'high'};
 list.push(NewArray, NewArray2);
      
     
-    const changeStatus =  list.map(object => {
-      if (object.name === 'create a post') {
-        return {
-          name: object.name,
-          status: 'Done',
-          priority: 'high'
-        };
+    const changeStatus = list.map(object => {
+      switch(object.name) {
+        case 'create a post':
+          return {
+            name: object.name,
+            status: 'Done',
+            priority: 'high'
+          };
+         
+          case 'test':
+            return {
+              name: object.name,
+              status: 'In Progress',
+              priority: 'medium'
+            };
+           
+            case 'sex':
+            return {
+              name: object.name,
+              status: 'In Progress',
+              priority: 'low'
+            };
+            
+            case 'horror':
+            return {
+              name: object.name,
+              status: 'In Progress',
+              priority: 'low'
+            };
+           
+            default:
+              console.log('Invalid task name');
+              return object;
       }
-      else if(object.name === 'test') {
-        return {
-          name: object.name,
-          status: 'In Progress',
-          priority: 'medium'
-        };
-      }
-      else {
-        return object;
-      }
-     })
+      
+    });
+    
      
-
-  list.splice(3, 3);
-
-
-  for (let task of list) {
+  /*   changeStatus.shift()
+     changeStatus.pop(); */
+  for (let task of changeStatus) {
     console.log(task);
   }
