@@ -1,15 +1,12 @@
-function BackCountTimeout(second){
-   console.log(second);
+function getAverage(){
+  const array = [1,4,4,4,1,2,3];
+  const sum = array.reduce(function(arraySum, arrayNumber){
+    return (arraySum + arrayNumber) 
+  }, 0) / array.length;
+  let OneSum = Math.round(sum);
+  console.log(`([${array}],${OneSum})`);
+  return sum;
   
-let counterId = setInterval(() => {
-   --second
-   if(second === 0){
-      clearInterval(counterId);
-   }
-   console.log(second);
-}, 500);
-};
+  }
+getAverage();
 
-
-
-BackCountTimeout(10)
