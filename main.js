@@ -1,12 +1,24 @@
-function getAverage(){
-  const array = [1,4,4,4,1,2,3];
-  const sum = array.reduce(function(arraySum, arrayNumber){
-    return (arraySum + arrayNumber) 
-  }, 0) / array.length;
-  let OneSum = Math.round(sum);
-  console.log(`([${array}],${OneSum})`);
-  return sum;
-  
-  }
-getAverage();
+const button = document.getElementById('elem');
+const pauseButton = document.getElementById('elem2');
+let isPaused = false;
+function buttonClickStopwatch(watch){
+    watch = 0;
+    if(isPaused === true){
+        return;
+    }
+    let Stopwatch = setInterval(() => {
+                watch++;
+        if(watch === 10){
+            clearInterval(Stopwatch);
+        }
+       
+    console.log(watch);
+}, 1000);
+};
+function togglePause(){
+    if(isPaused === false){
+         isPaused = !isPaused;
+}}
+button.addEventListener('click',() => buttonClickStopwatch(0));
+pauseButton.addEventListener('click', togglePause);
 
