@@ -59,21 +59,21 @@
 </head>
 <body>
     <div class="calc">
-        <form action="" class="calc_form">
-            <div class = calc_label-div>
-            <input type="text" class="calc_label"></input>
-            </div>
-            <select name="user_profile_color_1">
-                <option class='number' value="1">+</option>
-                <option class='number' value="2">-</option>
-                <option class='number' value="3">*</option>
-                <option class='number' value="4">/</option>
+        <form action="" class="calc_form" id="form">
+            
+            <input id='calc_label' type="text" class="calc_label"></input>
+            
+            <select name="user_profile_color_1" id="select">
+                <option class='number' id="plus" value="1">+</option>
+                <option class='number' id="minus" value="2">-</option>
+                <option class='number' id="multi" value="3">*</option>
+                <option class='number' id="division" value="4">/</option>
               </select>
-              <div class = calc_label-div2>
-            <input type="text" class="calc_label"></input>
-            </div>
-            <button class="calc_label-2" id="Equally">=</button>
-            <p class="result">10</p>
+             
+            <input id='calc_label2' type="text" class="calc_label2"></input>
+            
+            <button class="calc_label-2" id='resultat'>=</button>
+            <p  class="result" id="result"></p>
         </form>
     </div>
     <script src="/main.js">
