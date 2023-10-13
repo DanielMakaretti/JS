@@ -7,35 +7,39 @@ let plus = document.getElementById('plus').value;
 let minus = document.getElementById('minus').value;
 let multi = document.getElementById('multi').value;
 let division = document.getElementById('division').value;
-
+const result = document.getElementById('result');
     if(select === plus){
         const plus_exp = calc_label + calc_label2;
-        console.log(plus_exp);
+        result.textContent = plus_exp;
       }
       else if(select === minus){
         const minus_exp = calc_label - calc_label2;
-       console.log(minus_exp);
+        result.textContent = minus_exp;
+      
       }
       else if(select === multi){
         const multi_exp = calc_label * calc_label2;
-        console.log(multi_exp);
+        result.textContent = multi_exp;
       }
       else if(select === division){
         const division_exp = calc_label / calc_label2;
-        console.log(division_exp);
+        result.textContent = division_exp;
       }
       else{
-        resultat.textContent = 'LOX';
+        result.textContent = 'LOX';
       }
+      sessionStorage.setItem('result', result.textContent);
 }
+
+const savedResult = sessionStorage.getItem('result');
+result.textContent = savedResult;
 const resultat = document.getElementById('resultat');
 resultat.addEventListener('click', getCalculator);
-const result = document.getElementById('result').textContent;
-document.getElementById('result').textContent = getCalculator();
-console.log(result);
+
+
 });
 
-/* document.getElementById('form').addEventListener('submit', function buttonClickEqually(event) {
+document.getElementById('form').addEventListener('submit', function buttonClickEqually(event) {
  event.preventDefault()
    validation(this);
-}); */
+});
