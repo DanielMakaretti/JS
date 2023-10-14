@@ -55,23 +55,29 @@
         .number {
             font-size: 30px;
         }
+        .input-box{
+            display:flex;
+            flex-direction: column;
+            color: brown;
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="calc">
         <form action="" class="calc_form" id="form">
-            
+            <div class="input-box">
             <input id='calc_label' type="text" class="calc_label"></input>
-            
+            </div>
             <select name="user_profile_color_1" id="select">
                 <option class='number' id="plus" value="1">+</option>
                 <option class='number' id="minus" value="2">-</option>
                 <option class='number' id="multi" value="3">*</option>
                 <option class='number' id="division" value="4">/</option>
               </select>
-             
+             <div class="input-box">
             <input id='calc_label2' type="text" class="calc_label2"></input>
-            
+            </div>
             <button class="calc_label-2" id='resultat'>=</button>
             <p  class="result" id="result"></p>
         </form>
