@@ -9,7 +9,6 @@
             display: flex;
             width: 1000px;
             height: 1000px;
-            background-color: rgb(148, 134, 212);
             border-radius: 10%;
             align-items: center;
           flex-direction: center;
@@ -61,10 +60,15 @@
             color: brown;
             font-size: 20px;
         }
+        .background-color {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
 </head>
 <body>
-    <div class="calc">
+    <div class="calc" id="calc" style="background-color: rgb(148, 134, 212);">
         <form action="" class="calc_form" id="form">
             <div class="input-box">
             <input id='calc_label' type="text" class="calc_label"></input>
@@ -80,6 +84,9 @@
             </div>
             <button class="calc_label-2" id='resultat'>=</button>
             <p  class="result" id="result"></p>
+        </form>
+        <form class="background-color" id="background-color">
+            <button class="changeColor" id="changeColor" data-color="#e6e6e6">Изменить цвет</button>
         </form>
     </div>
     <script src="/main.js">

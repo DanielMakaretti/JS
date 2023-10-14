@@ -8,8 +8,7 @@ let minus = document.getElementById('minus').value;
 let multi = document.getElementById('multi').value;
 let division = document.getElementById('division').value;
 const result = document.getElementById('result');
-elem = document.getElementById('form');
-const backgroundColor = elem.style.backgroundColor;
+
     if(select === plus){
         const plus_exp = calc_label + calc_label2;
         result.textContent = plus_exp;
@@ -76,3 +75,19 @@ document.getElementById('form').addEventListener('submit', function (event) {
     alert('Form successfully sent');
   }
 });
+const color = document.getElementById('calc');
+const change = document.getElementById('changeColor');
+ const color1 = 
+change.addEventListener('click', () => {
+  if(color.style.backgroundColor === 'rgb(148, 134, 212)'){
+    color.style.backgroundColor = 'rgb(100, 100, 120)';
+    
+  }
+  else if(color.style.backgroundColor === 'rgb(100, 100, 120)'){
+    color.style.backgroundColor = 'rgb(148, 134, 212)';
+  }
+  sessionStorage.setItem('calc', color.style.backgroundColor);
+});
+const savedResult = sessionStorage.getItem('calc');
+color.style.backgroundColor = savedResult;
+
