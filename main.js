@@ -8,35 +8,27 @@ const minus = document.getElementById('minus').value;
 const multi = document.getElementById('multi').value;
 const division = document.getElementById('division').value;
 const result = document.getElementById('result');
-
-    if(select === plus){
-        const plus_exp = calc_label + calc_label2;
-        result.textContent = plus_exp;
-      }
-      else if(select === minus){
-        const minus_exp = calc_label - calc_label2;
-        result.textContent = minus_exp;
-      
-      }
-      else if(select === multi){
-        const multi_exp = calc_label * calc_label2;
-        result.textContent = multi_exp;
-      }
-      else if(select === division){
-        const division_exp = calc_label / calc_label2;
-        result.textContent = division_exp;
-      }
-      else{
-        result.textContent = 'LOX';
-      }
-      sessionStorage.setItem('result', result.textContent);
-}
-
+switch(select){
+  case plus:
+    result.textContent = calc_label + calc_label2;
+    break;
+  case minus:
+    result.textContent = calc_label - calc_label2;
+    break;
+    case multi:
+      result.textContent = calc_label * calc_label2;
+      break;
+      case division:
+        result.textContent = calc_label / calc_label2;
+        break;
+        default:
+          alert('Не существует таких выражений');
+};
+};
 const savedResult = sessionStorage.getItem('result');
 result.textContent = savedResult;
 const resultat = document.getElementById('resultat');
 resultat.addEventListener('click', getCalculator);
-
 
 });
 function validation(form){
