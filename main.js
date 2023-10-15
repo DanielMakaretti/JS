@@ -2,11 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
 function getCalculator(){
 const calc_label = parseInt(document.getElementById('calc_label').value);
 const calc_label2 = parseInt(document.getElementById('calc_label2').value);
-let select = document.getElementById('select').value;
-let plus = document.getElementById('plus').value;
-let minus = document.getElementById('minus').value;
-let multi = document.getElementById('multi').value;
-let division = document.getElementById('division').value;
+const select = document.getElementById('select').value;
+const plus = document.getElementById('plus').value;
+const minus = document.getElementById('minus').value;
+const multi = document.getElementById('multi').value;
+const division = document.getElementById('division').value;
 const result = document.getElementById('result');
 
     if(select === plus){
@@ -75,19 +75,30 @@ document.getElementById('form').addEventListener('submit', function (event) {
     alert('Form successfully sent');
   }
 });
-const color = document.getElementById('calc');
-const change = document.getElementById('changeColor');
- const color1 = 
-change.addEventListener('click', () => {
-  if(color.style.backgroundColor === 'rgb(148, 134, 212)'){
-    color.style.backgroundColor = 'rgb(100, 100, 120)';
-    
-  }
-  else if(color.style.backgroundColor === 'rgb(100, 100, 120)'){
-    color.style.backgroundColor = 'rgb(148, 134, 212)';
-  }
-  sessionStorage.setItem('calc', color.style.backgroundColor);
-});
-const savedResult = sessionStorage.getItem('calc');
-color.style.backgroundColor = savedResult;
 
+
+const change = document.getElementById('changeColor');
+
+function changeRandomColor(){
+  const color = document.getElementById('calc');
+  const colors = ['red', 'blue', 'green', 'orange'];
+const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    if(color.style.backgroundColor === 'rgb(245, 255, 67)'){
+      color.style.backgroundColor = randomColor;
+      
+    }
+    else if(color.style.backgroundColor === 'red'|| 'blue' || 'green' || 'orange'){
+      color.style.backgroundColor = randomColor;
+      return;
+    }
+    
+    sessionStorage.setItem('calc', color.style.backgroundColor);
+    window.addEventListener('load', function() {
+      const savedResult = sessionStorage.getItem('calc');
+      if(savedResult){
+        document.getElementById('calc').style.backgroundColor = savedResult;
+      }
+    })
+  };
+  setInterval(changeRandomColor, 1000);
+change.addEventListener('click', changeRandomColor);
