@@ -22,8 +22,14 @@ switch(select){
         result.textContent = calc_label / calc_label2;
         break;
         default:
-          alert('Не существует таких выражений');
+          
 };
+const element = document.querySelector('#divParent');
+const div = document.createElement('div');
+          const div2 = document.createElement('div');
+          div2.id = 'divChild'
+          div2.innerHTML = result.textContent;
+          element.appendChild(div2);
 };
 const savedResult = sessionStorage.getItem('result');
 result.textContent = savedResult;
@@ -31,6 +37,13 @@ const resultat = document.getElementById('resultat');
 resultat.addEventListener('click', getCalculator);
 
 });
+function removeDivNumber(){
+  const removeParentElement = document.querySelector('#divParent');
+  const removeChildElement = document.querySelector('#divChild');
+  removeParentElement.removeChild(removeChildElement);
+}
+divParent.addEventListener('click', removeDivNumber);
+
 function validation(form){
   function removeError(input){
 const parent = input.parentNode;
@@ -92,5 +105,5 @@ const randomColor = colors[Math.floor(Math.random() * colors.length)];
       }
     })
   };
-  setInterval(changeRandomColor, 1000);
+  setInterval(changeRandomColor, 10000);
 change.addEventListener('click', changeRandomColor);
