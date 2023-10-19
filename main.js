@@ -107,3 +107,7 @@ const randomColor = colors[Math.floor(Math.random() * colors.length)];
   };
   setInterval(changeRandomColor, 10000);
 change.addEventListener('click', changeRandomColor);
+
+import { subtract, p} from './helpers.js';
+console.log(subtract(5, 2));
+console.log(p);

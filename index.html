@@ -5,90 +5,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS</title>
     <style type="text/css">
-        .calc {
-            display: flex;
-            width: 1000px;
-            height: 1000px;
-            border-radius: 10%;
-            align-items: center;
-          flex-direction: center;
-        }
-        .calc_form{
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            height: 30px;
-        }
-        .calc-label{
-            height: 50px;
-            margin-right: 20px;
-            font-size: 50px;
-            margin-right: 30px;
+        .h1_high{
             
         }
-        .calc_label-2{
-            width: 50px;
-            height: 35px;
-            font-size: 20px;
-        }
-        .user_profile_color_1{
-            width: 30px;
-            height: 20px;
-           font-size: 20px;
-        }
-        .result{
-            font-size: 35px;
-            margin: 0 10px 0 15px;
-            height: 100%;
-        }
-        input[type='text'] {font-size: 24px;}
-        .calc_label-div{
-            margin-right: 20px;
-           
-        }
-        .calc_label-div2{
-            margin: 0 20px 0 20px;
-            display: inline-block;
-            vertical-align: top;
-        }
-        .number {
-            font-size: 30px;
-        }
-        .input-box{
-            display:flex;
-            flex-direction: column;
-            color: brown;
-            font-size: 20px;
-        }
-        .background-color {
+        .h1{
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: center; 
+        }
+        .h2{
+            margin: 10px 0 10px 0;
+        }
+        .high{
+            min-height: 50px;
+            border-radius: 10px;
+            min-width: 680px;
+        }
+        .p{
+            margin: 15px 0 15px 0;
+        }
+        .ToDo{
+            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+        
+        }
+        .div_checkbox{
+            display: flex;
+            align-items: center;
+            border: 3px solid rgba(0,0,0,0.3);
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .div_checkbox:last-child{
+            margin-bottom: 0px;
+        }
+        .div_checkbox:hover{
+            background-color: rgba(0,0,0,0.3);
+        }
+        .inner_input{
+            padding-right: 20px;
+        }
+        .checkbox_input{
+            min-height: 100%;
+            width: 30px;
+            height: 30px;
+        }
+        .inner_label{
+            font-size: 25px;
+            font-family: Noto Sans, sans-serif;
+        }
+        .close {
+            margin-right: 20px;
+            width: 25px;
+            height: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+        }
+        .close:hover{
+            box-shadow: inset 5em 15em rgb(0, 0, 0);
+        }
+        .close_1{
+            margin-right: 20px;
+            width: 80px;
+            height: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+        }
+        .close_1:hover{
+            box-shadow: inset 5em 15em rgb(0, 0, 0);
         }
     </style>
 </head>
 <body>
-    <div class="calc" id="calc" style="background-color: rgb(245, 255, 67);">
-        <form action="" class="calc_form" id="form">
-            <div class="input-box">
-            <input id='calc_label' type="text" class="calc_label"></input>
+        <div class="ToDo">
+            <div class="h1">
+                <h1 class="h1">HIGH</h1>
             </div>
-            <select name="user_profile_color_1" id="select">
-                <option class='number' id="plus" value="1">+</option>
-                <option class='number' id="minus" value="2">-</option>
-                <option class='number' id="multi" value="3">*</option>
-                <option class='number' id="division" value="4">/</option>
-              </select>
-             <div class="input-box">
-            <input id='calc_label2' type="text" class="calc_label2"></input>
+            <form action="">
+    <input type="text" class="high" style="font-size: 25px;padding-left: 15px;" placeholder="Добавить важных дел"></input>
+    <div class="div_checkbox">
+        <div class="inner_input">
+            <input class="checkbox_input" type="checkbox">
             </div>
-            <button class="calc_label-2" id='resultat'>=</button>
-            <p  class="result" id="result"></p>
-            <button class="changeColor" id="changeColor">Изменить цвет</button>
-        </form>
+        <div class="inner_label">
+    <p class="p">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Magni mollitia necessitatibus, quasi, commodi officia consequatur 
+        delectus veritatis, minima saepe consequuntur quibusdam?  Minus?
+    </p>
+        </div>
+       <div class="close_1"></div>
     </div>
-    <div id="divParent"></div>
-    <script src="/main.js">
+    <div class="div_checkbox">
+        <div class="inner_input">
+            <input class="checkbox_input" type="checkbox">
+            </div>
+        <div class="inner_label">
+    <p class="p">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+       </p>
+        </div>
+        <div class="close"></div>
+    </div>
+    <div class="div_checkbox">
+        <div class="inner_input">
+            <input class="checkbox_input" type="checkbox">
+            </div>
+        <div class="inner_label">
+    <p class="p">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        </p>
+        </div>
+        <div class="close"></div>
+    </div>
+    <div class="h1">
+        <h1 class="h2">LOW</h1>
+    </div>
+    <input type="text" class="high" style="font-size: 25px;padding-left: 15px;" placeholder="Добавить">
+    </input>
+    <div class="div_checkbox">
+        <div class="inner_input">
+            <input class="checkbox_input" type="checkbox">
+            </div>
+        <div class="inner_label">
+    <p class="p">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+       </p>
+        </div>
+        <div class="close"></div>
+    </div>
+</form>
+        </div>
+        
+    <script  src="/main.js">
     </script>
 </body>
 </html>
