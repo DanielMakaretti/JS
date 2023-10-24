@@ -64,6 +64,7 @@
         }
         .close:hover{
             box-shadow: inset 5em 15em rgb(0, 0, 0);
+           
         }
         .close_1{
             margin-right: 20px;
@@ -87,10 +88,12 @@
                     <button type="submit" value="Отправить"></button>
     <input type="text" class="high" id="addTaskForm" style="font-size: 25px;padding-left: 15px;" placeholder="Добавить важных дел"></input>
                 </div>
-    <div class="div_checkbox">
+                
+    <div class="div_checkbox" id="divCheckbox">
         <div class="inner_input">
             <input class="checkbox_input" type="checkbox">
             </div>
+            
         <div class="inner_label">
     <p class="p">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
         Magni mollitia necessitatibus, quasi, commodi officia consequatur 
@@ -120,11 +123,18 @@
         </div>
         <div class="close"></div>
     </div>
+    
+</form>
+    <form>
     <div class="h1">
         <h1 class="h2">LOW</h1>
     </div>
-    <input type="text" class="high" style="font-size: 25px;padding-left: 15px;" placeholder="Добавить">
+    <div>
+        <button type="submit" value="Отправить"></button>
+        <input type="text" class="high" id="addTaskForm2" style="font-size: 25px;padding-left: 15px;" placeholder="Добавить">
     </input>
+    </div>
+   
     <div class="div_checkbox">
         <div class="inner_input">
             <input class="checkbox_input" type="checkbox">
@@ -136,7 +146,8 @@
         <div class="close"></div>
     </div>
 </form>
-        </div>
+
+
         
     <script  src="/main.js">
     </script>
