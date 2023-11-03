@@ -109,9 +109,7 @@ align-item: center;
 word-wrap: break-word;
 `
 
-function removeButton(){
-  divTask.remove('divTask');
-}
+const removeButton = () => divTask.remove('divTask');
 closeDiv.addEventListener('click', removeButton);
 
 
@@ -129,7 +127,7 @@ taskForm2.value = '';
 
   })
 
-
+const buttonLow = document.getElementById('buttonLow');
 addTaskFormLow.addEventListener('submit', function addTaskLow(event) {
   event.preventDefault();
   const taskForm2 = document.getElementById('addTaskForm2');
@@ -204,27 +202,13 @@ divTask.appendChild(rootTask);
 addTaskFormLow.appendChild(divTask);
   }
 createAddElement(taskInput2)
-
-function removeButton(){
-
-  let childElement = addTaskFormLow.querySelector(':last-child');
-console.log(childElement)
+const deleteButton = document.getElementById('buttonLow');
+const deleteTask = (e) => {
+  let childElement = addTaskFormLow.querySelector(':first-child');
+  console.log(childElement)
+childElement.remove()
 }
-addTaskFormLow.addEventListener('click', removeButton);
-
-const closeDiv = document.createElement('closeDiv');
-closeDiv.classList = 'closeDiv';
-closeDiv.style.cssText = `
-position: absolute;
-right: 0;
-align-item: center;
-word-wrap: break-word;
-margin: 10px 20px 5px 0px;
-width: 25px;
-height: 20px;
-background-color: rgba(0, 0, 0, 0.5);
-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);`
-addTaskFormLow.appendChild(closeDiv);
+deleteButton.addEventListener('click', deleteTask);
 
 
 })
