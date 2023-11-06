@@ -89,6 +89,7 @@ addTaskFormLow.addEventListener('submit', function addTaskLow(event) {
   function createAddElement(task){
     const divTask = document.createElement('div');
     divTask.className = 'divTask';
+    divTask.id = 'divTask';
     
     const rootTask = document.createElement('ul');
     rootTask.className = 'taskList';
@@ -121,11 +122,19 @@ addTaskFormLow.appendChild(divTask);
   }
 createAddElement(taskInput2)
 const deleteButton = document.getElementById('buttonLow');
-const deleteTask = (e) => {
-  let childElement = addTaskFormLow.querySelector(':nth-child(2)');
-  console.log(childElement)
-// childElement.remove
-}
+const deleteTask = () => {
+  const parentDeleteTask = document.getElementById('form_low');
+  
+  const childDeleteTask = document.getElementById('divTask:lastChild');
+  // const childDeleteTask = document.querySelector('div:lastChild');
+  parentDeleteTask.removeChild(childDeleteTask);
+  console.log(parentDeleteTask);
+//  while (childDeleteTask) {
+//   parentDeleteTask.removeChild(childDeleteTask);
+//   childDeleteTask = parentDeleteTask.lastChild;
+//  }
+
+};
 deleteButton.addEventListener('click', deleteTask);
 
 
