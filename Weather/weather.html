@@ -12,7 +12,7 @@
             <label for="" class="label_form">
                 <div class="button_search" type="submit"></div>
                 <button class="weather_button" type="submit"></button>
-            <input type="text" class="weather_input" id='input' placeholder="Amur"/>
+            <input type="text" class="weather_input" id='input' placeholder="Find..."/>
             </label>
         </form>
         
@@ -26,9 +26,9 @@
            
             <div class="degree_location">
                 <div class="degree_location-base">
-                <div class="degree_location-inner">
+                <div class="degree_location-inner" id="degree_location-inner">
                     <h3 class="degree_location-text" id="degree_location-text"></h3>
-                    <img src="/Weather/like.svg" alt="" class="degree_location-img">
+                    <img src="/Weather/like.svg" alt="" class="degree_location-img" id="degree_location-img">
                 </div>
                
                 <img src="" alt="" class="like">
@@ -40,16 +40,13 @@
                 <p class="add_locations-text">Added Locations:</p>
             </div>
             <div class="city_locations">
-                <ul class="city_locations-inner">
-                    <li>Amur</li>
-                    <li>Syktyvkar</li>
-                    <li>Bali</li>
-                    <li>Bolshelug</li>
-                    <li>Moscow</li>
+                <ul class="city_locations-inner" id="city_locations-inner">
+                    
                 </ul>
             </div>
         </div>
     </div>
 </body>
-<script src="weather.js"></script>
+<script src="weather.js" type="module"></script>
+<script src="ModuleWeather.js" type="module"></script>
 </html>
