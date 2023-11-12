@@ -1,10 +1,9 @@
-
-  import {createAddElement, moduleThenData} from './ModuleWeather.js';
+import {createAddElement, moduleThenData, deleteTextForm} from './ModuleWeather.js';
 const imgButton = document.getElementById('degree_location-inner');
 if (imgButton) {
 imgButton.addEventListener('click', createAddElement);
 };
-
+deleteTextForm(); 
 const findCityWeather = (event) => {
     event.preventDefault()
 const cityName = document.querySelector('.weather_input').value;
@@ -25,32 +24,19 @@ fetch(url)
    console.error('Ошибка, ебланка:', error)
 })
 }
+const weatherForm = document.getElementById('weather_form');
+weatherForm.addEventListener('submit', findCityWeather);
 
-document.querySelector('.button_search').addEventListener('click',() => {
-const cityName = document.querySelector('.weather_input').value;
-findNameInput.value = '';
-});
-document.getElementById('weather_form').addEventListener('submit', findCityWeather);
-// const addCityForm = (num) => {
-// //    const degree = document.getElementById('degree_location-text');
-// //    const textNode = document.createTextNode(num);
-// //    degree.appendChild(textNode)
-// }
-// addCityForm(data.name);
-// const input = document.getElementById('input');
-// input.addEventListener('input', function() {
-//     const value = input.value;
-//     const previousElement = document.getElementById('textTemperature');
-//     if(previousElement) {
-//         previousElement.remove();
-//     }
-// })
-// const newElement = document.createElement('span');
-//   newElement.id = 'previousElement';
-//   newElement.textContent = value;
-//   input.insertAdjacentElement('afterend', newElement);
- /* ----------------------------------------------------------------------------*/
-  
-   
+document.addEventListener('DOMContentLoaded', () => {
+const deleteCityLocation = () => {
+    const deleteParent = document.getElementById('city_locatins_inner');
+    const deleteChild = document.getElementById('saveResult');
+    deleteParent.removeChild(deleteChild);
+}
+const closeButton = document.getElementById('closeButton');
+closeButton.addEventListener('click', deleteCityLocation);
+})
+    
+
     
  
