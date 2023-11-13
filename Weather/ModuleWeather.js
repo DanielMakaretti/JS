@@ -1,25 +1,34 @@
+
 const createAddElement = () => {
     const cityLocations = document.getElementById('city_locations-inner');
     const locationText = document.getElementById('degree_location-text');
   const saveResult = document.createElement('li');
-    const closeButton = document.createElement('div');
+    const closeButton = document.createElement('button');
     closeButton.classList = 'closeButton';
     closeButton.id = 'closeButton';
-    // closeButton.setAttribute('type', 'button');
-    const naturalButton = document.createElement('button');
-    naturalButton.id = 'naturalButton';
-    cityLocations.appendChild(naturalButton);
+    closeButton.setAttribute('role', 'button');
+    cityLocations.appendChild(saveResult);
     saveResult.appendChild(closeButton);
+    closeButton.addEventListener('click', deleteCityLocation);
+    // const naturalButton = document.createElement('button');
+    // naturalButton.id = 'naturalButton';
+    
   saveResult.id = 'saveResult';
   saveResult.classList = 'saveResult';
-  
   if(locationText.innerText !== '') {
     const innerTextLocation = document.createTextNode(locationText.innerText);
     saveResult.appendChild(innerTextLocation);
     cityLocations.appendChild(saveResult);
-  }
+  };
 };
-
+const deleteCityLocation = () => {
+  const deleteParent = document.getElementById('city_locations-inner');
+  const deleteChild = document.querySelector('li');
+  if (deleteChild) {
+    
+    deleteParent.removeChild(deleteChild);
+  };
+};
 const moduleThenData = (data) => {
     console.log(data)
     const degree = document.getElementById('degree_location-text');
@@ -45,8 +54,12 @@ const moduleThenData = (data) => {
         if (cityName === '') {
             textTemperature.textContent = '';
             textDegree.textContent = '';
-        }
+        };
         });
-}
+};
 
-  export {createAddElement, moduleThenData, deleteTextForm};
+  
+ 
+
+
+  export {createAddElement, moduleThenData, deleteTextForm, deleteCityLocation};

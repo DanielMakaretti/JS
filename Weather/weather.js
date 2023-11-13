@@ -1,4 +1,16 @@
-import {createAddElement, moduleThenData, deleteTextForm} from './ModuleWeather.js';
+import {createAddElement, moduleThenData, deleteTextForm, deleteCityLocation} from './ModuleWeather.js';
+document.addEventListener('DOMContentLoaded', () => {
+    const deleteCityLocation = () => {
+        const deleteParent = document.getElementById('city_locations-inner');
+        const deleteChild = document.querySelector('li');
+        if (deleteChild) {
+          console.log(deleteParent);
+          deleteParent.removeChild(deleteChild);
+        }
+      }
+const closeButton = document.getElementById('button_test');//delete CityLocation
+closeButton.addEventListener('click', deleteCityLocation);
+})
 const imgButton = document.getElementById('degree_location-inner');
 if (imgButton) {
 imgButton.addEventListener('click', createAddElement);
@@ -27,15 +39,8 @@ fetch(url)
 const weatherForm = document.getElementById('weather_form');
 weatherForm.addEventListener('submit', findCityWeather);
 
-document.addEventListener('DOMContentLoaded', () => {
-const deleteCityLocation = () => {
-    const deleteParent = document.getElementById('city_locatins_inner');
-    const deleteChild = document.getElementById('saveResult');
-    deleteParent.removeChild(deleteChild);
-}
-const closeButton = document.getElementById('closeButton');
-closeButton.addEventListener('click', deleteCityLocation);
-})
+
+
     
 
     

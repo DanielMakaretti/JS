@@ -82,6 +82,7 @@ input::placeholder {
 }
 .degree_location-img {
     width: 20px;
+    cursor: pointer;
 }
 .temperature {
     margin: 10px 0 0 10px;
@@ -136,6 +137,7 @@ input::placeholder {
     align-items: center;
 }
 .closeButton {
+    cursor: pointer;
     margin-left: 10px;
     grid-row: 1;
     grid-column: 2;
