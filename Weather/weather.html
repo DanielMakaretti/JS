@@ -1,39 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
     <link rel="stylesheet" href="weather.css" />
 </head>
+
 <body>
     <div class="weather">
         <form action="" class="weather_form" id="weather_form">
             <label for="" class="label_form">
                 <div class="button_search" type="submit"></div>
                 <button class="weather_button" type="submit"></button>
-            <input type="text" class="weather_input" id='input' placeholder="Find..."/>
+                <input type="text" class="weather_input" id='input' placeholder="Find..." />
             </label>
         </form>
-        
+
         <div class="degree">
             <div class="temperature" id="div_temperature">
                 <h1 class="temperature" id="temperature"></h1>
             </div>
-           <div class="img_cloud">
-            <img src="/Weather/cloud.svg" alt="" class="img_cloud-inner">
-           </div>
-           
+            <div class="img_cloud" id="img_cloud">
+                <!-- <img src="/Weather/cloud.svg" alt="" class="img_cloud-inner"> -->
+            </div>
+
             <div class="degree_location">
                 <div class="degree_location-base">
-                <div class="degree_location-inner" id="degree_location-inner">
-                    <h3 class="degree_location-text" id="degree_location-text"></h3>
-                    <img src="/Weather/like.svg" alt="" class="degree_location-img" id="degree_location-img">
+                    <div class="degree_location-inner" id="degree_location-inner">
+                        <h3 class="degree_location-text" id="degree_location-text"></h3>
+                        <img src="/Weather/like.svg" alt="" class="degree_location-img" id="degree_location-img">
+                    </div>
+
+                    <img src="" alt="" class="like">
                 </div>
-               
-                <img src="" alt="" class="like">
             </div>
-        </div>
         </div>
         <div class="locations">
             <div class="add_locations">
@@ -48,4 +50,5 @@
 </body>
 <script src="weather.js" type="module"></script>
 <script src="ModuleWeather.js" type="module"></script>
+
 </html>
