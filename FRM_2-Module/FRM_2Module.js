@@ -1,36 +1,49 @@
-function Task(task) {
-    this.myname = task;
-    this.status = 'в плане';
-    this.complete = function(state) {
-        this.status = state
-        if (taskOne.myname === 'купить молоко') {
-            console.log(`${taskOne.myname}: ${taskOne.status}`); 
 
-            } else {
-                console.log('купить молоко: в плане');
-            };
-         if (taskTwo.myname === 'сделать домашку') {
-            console.log(`${taskTwo.myname}: ${taskOne.status}`); 
-         } else {
-            console.log('сделать домашку: в плане');
-         };
-         if (taskOne.myname === 'программировать') {
-            console.log(`${taskOne.myname}: ${taskOne.status}`); 
-         } else {
-            console.log('программировать: в плане');
-         }
-    };
-};
-const taskOne = new Task('программировать');
-const taskTwo = new Task('сделать домашку');
-const taskThree = new Task('купить молоко');
-taskOne.complete('done');
+// const startTime = new Date(1632111952313);
+// const endTime = Date.now();
+// const timeDiff = endTime - startTime;
+// console.log(`${timeDiff}`);
 
-// function addTask(status) {
-//     if (taskOne) {
-//         taskOne.complete(status);
-//         console.log(taskOne)
-//         console.log(`${taskOne.myname}: ${status}`);
-//     } 
+// function TimeoutFunction() {
+//    const startTime = new Date(1632111952313);
+// const endTime = Date.now();
+// const timeDiff = endTime - startTime;
+// console.log(`${timeDiff}`);
 // }
-// addTask('выполнено');
+//    const logger = new Logger()
+
+//    logger.start();
+   
+// TimeoutFunction();
+//    logger.end();
+   
+//    console.log(logger.result);
+class Logger {
+   constructor() {
+     this.startTime = 0;
+     this.endTime = 0;
+     this.result = 0;
+   }
+   
+   start() {
+     this.startTime = Date.now();
+   }
+   
+   end() {
+     this.endTime = Date.now();
+     this.result = this.endTime - this.startTime;
+   }
+ }
+ 
+ function TimeoutFunction() {
+   const startTime = new Date(1632111952313);
+   const endTime = Date.now();
+   const timeDiff = endTime - startTime;
+   console.log(`${timeDiff}`);
+ }
+ 
+ const logger = new Logger();
+ logger.start();
+ TimeoutFunction();
+ logger.end();
+ console.log(logger.result);

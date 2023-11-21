@@ -1,14 +1,54 @@
-import { createAddElement, moduleThenData, deleteTextForm, deleteCityLocation } from './ModuleWeather.js';
+import { createAddElement, moduleThenData, deleteTextForm, deleteCityLocation,
+     changeWeatherSnow, changeWeatherСloudy, changeWeatherRain, changeWeatherClear, giveDataFeelslike, giveDataSunrise} from './ModuleWeather.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-    const closeButton = document.getElementById('button_test');//delete CityLocation
-    closeButton.addEventListener('click', deleteCityLocation);
-});
-const imgButton = document.getElementById('degree_location-inner');
+     deleteTextForm();
+     const listDetailsDegree = () => {
+        degree.style.display = '';
+        const childDiv = document.createElement('div');
+        childDiv.classList = 'childDiv';
+        childDiv.id = 'childDiv';
+        const parentDiv = document.getElementById('degree');
+        parentDiv.style.display = '';
+        parentDiv.appendChild(childDiv);
+        const backButton = document.createElement('button');
+        backButton.classList = 'backButton';
+        backButton.id = 'backButton';
+        backButton.textContent = '<== BACK';
+        childDiv.appendChild(backButton);
+      };
+
+      
+     
+
+      const degreeDetailsButton = document.getElementById('degree_location-details');
+  degreeDetailsButton.addEventListener('click', listDetailsDegree);
+
+const imgButton = document.getElementById('degree_location-img');
 if (imgButton) {
     imgButton.addEventListener('click', createAddElement);
 };
-deleteTextForm();
+
+      
+  
+    //   document.addEventListener('DOMContentLoaded', () => {
+    // const closeButton = document.getElementById('button_test');//delete CityLocation
+    // closeButton.addEventListener('click', deleteCityLocation);
+    //   });
+    
+//     const backDetailsList = () => {
+//         const childDiv =  document.getElementById('childDiv');
+//         const degree = document.getElementById('degree');
+//         if (childDiv) {
+//             childDiv.style.display = 'none';
+//         }
+       
+//       };
+//       document.addEventListener('DOMContentLoaded', () => {
+//     const backButton = document.getElementById('backButton');//back list button
+//     backButton.addEventListener('click', backDetailsList);
+// });
+
+
 const findCityWeather = (event) => {
     event.preventDefault()
     const cityName = document.querySelector('.weather_input').value;
@@ -28,6 +68,8 @@ const findCityWeather = (event) => {
             changeWeatherСloudy(data)
             changeWeatherRain(data)
             changeWeatherClear(data)
+           giveDataFeelslike(data)
+           giveDataSunrise(data)
         })
         .catch(error => {
             console.error('Ошибка, ебланка:', error)
@@ -35,68 +77,4 @@ const findCityWeather = (event) => {
 }
 const weatherForm = document.getElementById('weather_form');
 weatherForm.addEventListener('submit', findCityWeather);
-
-const changeWeatherSnow = (data) => {
-    if (data.snow) {
-        const rainless = document.getElementById('img_cloud');
-        const newElementRain = document.createElement('img');
-        const newTextElement = document.createElement('p');
-        newTextElement.classList = 'newImgClear';
-        newTextElement.textContent = 'Snow';
-        newElementRain.classList = 'newImgSnow';
-        newTextElement.id = 'newTextSnow';
-        newElementRain.id = 'newImgSnow';
-        newElementRain.src = '/Weather/weather_snow2.png';
-        rainless.appendChild(newElementRain);
-        rainless.appendChild(newTextElement);
-    };
-    };
-   
-const changeWeatherСloudy = (data) => {
-    if (data.weather[0].main == 'Clouds') {
-        const rainless = document.getElementById('img_cloud');
-        const newElementRain = document.createElement('img');
-        const newTextElement = document.createElement('p');
-        newTextElement.classList = 'newImgClear';
-        newTextElement.textContent = 'Clouds';
-        newElementRain.classList = 'newImgCloudy';
-        newTextElement.id = 'newTextClouds';
-        newElementRain.id = 'newImgClouds';
-        newElementRain.src = '/Weather/cloud.svg';
-        rainless.appendChild(newElementRain);
-        rainless.appendChild(newTextElement);
-    };
-};
-
-const changeWeatherRain = (data) => {
-    if (data.weather[0].main == 'Rain') {
-        const rainless = document.getElementById('img_cloud');
-        const newElementRain = document.createElement('img');
-        const newTextElement = document.createElement('p');
-        newTextElement.classList = 'newImgClear';
-        newTextElement.textContent = 'Rain';
-        newElementRain.classList = 'newImgCloudy';
-        newElementRain.id = 'newImgRain';
-        newTextElement.id = 'newTextRain';
-        newElementRain.src = '/Weather/weather_light_rain.png';
-        rainless.appendChild(newElementRain);
-        rainless.appendChild(newTextElement);
-    };
-};
-
-const changeWeatherClear = (data) => {
-    if (data.weather[0].main == 'Clear') {
-        const rainless = document.getElementById('img_cloud');
-        const newElementRain = document.createElement('img');
-        const newTextElement = document.createElement('p');
-        newTextElement.classList = 'newImgClear';
-        newTextElement.textContent = 'Clear';
-        newElementRain.classList = 'newImgCloudyClear';
-        newTextElement.id = 'newTextClear';
-        newElementRain.id = 'newImgClear';
-        newElementRain.src = '/Weather/weather_clear.png';
-        rainless.appendChild(newTextElement);
-        rainless.appendChild(newElementRain);
-    };
-}
 
