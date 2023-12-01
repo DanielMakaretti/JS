@@ -1,5 +1,9 @@
 import { createAddElement, moduleThenData, deleteTextForm, deleteCityLocation,
-     changeWeatherSnow, changeWeatherСloudy, changeWeatherRain, changeWeatherClear, giveDataFeelslike, giveDataSunrise} from './ModuleWeather.js';
+     changeWeatherSnow, changeWeatherСloudy, changeWeatherRain, changeWeatherClear, giveDataFeelslike, giveDataSunrise,
+     giveDataSunset} from './ModuleWeather.js';
+     
+const parentDiv = document.getElementById('degree'); 
+const degreeDetailsButton = document.getElementById('degree_location-details');
 
      deleteTextForm();
      const listDetailsDegree = () => {
@@ -7,7 +11,6 @@ import { createAddElement, moduleThenData, deleteTextForm, deleteCityLocation,
         const childDiv = document.createElement('div');
         childDiv.classList = 'childDiv';
         childDiv.id = 'childDiv';
-        const parentDiv = document.getElementById('degree');
         parentDiv.style.display = '';
         parentDiv.appendChild(childDiv);
         const backButton = document.createElement('button');
@@ -16,19 +19,12 @@ import { createAddElement, moduleThenData, deleteTextForm, deleteCityLocation,
         backButton.textContent = '<== BACK';
         childDiv.appendChild(backButton);
       };
-
-      
-     
-
-      const degreeDetailsButton = document.getElementById('degree_location-details');
   degreeDetailsButton.addEventListener('click', listDetailsDegree);
 
 const imgButton = document.getElementById('degree_location-img');
 if (imgButton) {
     imgButton.addEventListener('click', createAddElement);
 };
-
-      
   
     //   document.addEventListener('DOMContentLoaded', () => {
     // const closeButton = document.getElementById('button_test');//delete CityLocation
@@ -70,6 +66,7 @@ const findCityWeather = (event) => {
             changeWeatherClear(data)
            giveDataFeelslike(data)
            giveDataSunrise(data)
+           giveDataSunset(data)
         })
         .catch(error => {
             console.error('Ошибка, ебланка:', error)
