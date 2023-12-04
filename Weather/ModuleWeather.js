@@ -1,7 +1,7 @@
 
-export { createAddElement, moduleThenData, deleteTextForm, deleteCityLocation, changeWeatherSnow,
+export { createAddElement, moduleThenData, deleteCityLocation, changeWeatherSnow,
    changeWeatherСloudy, changeWeatherRain, changeWeatherClear, giveDataFeelslike, giveDataSunrise,
-   giveDataSunset};
+   giveDataSunset, deleteTextForm, getHours18, getHours21, getHours00};
    const cityLocations = document.getElementById('city_locations-inner');
    const locationText = document.getElementById('degree_location-text');
    const temperature = document.getElementById('temperature');
@@ -10,6 +10,7 @@ export { createAddElement, moduleThenData, deleteTextForm, deleteCityLocation, c
    const parentDelete = document.getElementById('img_cloud');
    const childDeleteImg = document.getElementById('newImgClouds');
    const childDeleteText = document.getElementById('newTextClouds');
+   const boxDeatailsDiv = document.getElementById('boxDeatailsDiv');
    
 const createAddElement = () => {
   const saveResult = document.createElement('li');
@@ -47,6 +48,7 @@ const moduleThenData = (data) => {
   textCity.id = 'textCity';
   locationText.appendChild(textCity);
   temperature.appendChild(textTemperature);//add result temperature in block
+  console.log(formulaDegree)
 };
 
 const deleteTextForm = () => {
@@ -155,8 +157,7 @@ const giveDataFeelslike = (data) => {
   const resultFormula = (Math.trunc(formulaDegree) + '°');
   const resultTextFormula = (`Feels like:  ${resultFormula}`);
     console.log(resultTextFormula);
-    textDeatailsDiv.innerHTML = resultTextFormula;
-    
+   textDeatailsDiv.innerHTML = resultTextFormula;
   } else {
     console.log("Ошибка: отсутствует значение data.main.feels_like");
   };
@@ -173,13 +174,10 @@ const giveDataSunrise = (data) => {
     const date = new Date(dateNewSunrise * 1000);
   const getHours = date.getHours();
   const getMinutes =  date.getMinutes();
-  
-  const resultTextFormula = (`Sunrise:  ${getHours}:${getMinutes}`);
-    console.log(resultTextFormula);
+  const resultTextFormula = (`Sunrise:  ${getHours}:${getMinutes} pm`);
     textDeatailsDiv.innerHTML = resultTextFormula;
-    
   } else {
-    console.log("Ошибка: отсутствует значение data.main.feels_like");
+    console.log("Ошибка: отсутствует значение data.main.temp");
   };
 };
 const giveDataSunset = (data) => {
@@ -192,15 +190,75 @@ const giveDataSunset = (data) => {
     const feelsSunset = (data.sys.sunset);
     const dateNewSunset = parseInt(feelsSunset);
     const date = new Date(dateNewSunset * 1000);
-    console.log(dateNewSunset);
+    const setHours = date.setHours(12);
   const getHours = date.getHours();
   const getMinutes =  date.getMinutes();
-  
-  const resultTextFormula = (`Sunset:  ${getHours}:${getMinutes}`);
-    console.log(resultTextFormula);
+  const resultTextFormula = (`Sunset:  ${getHours}:${getMinutes} pm`);
     textDeatailsDiv.innerHTML = resultTextFormula;
-    
   } else {
     console.log("Ошибка: отсутствует значение data.main.feels_like");
   }
 }
+
+function getHours18(data) {
+  const boxDeatailsDiv = document.createElement('ul');
+  const textDeatailsDiv = document.createElement('li');
+  boxDeatailsDiv.id = 'boxDeatailsDiv';
+  textDeatailsDiv.classList = 'textDeatailsDegree';
+  boxDeatailsDiv.classList = 'boxDeatailsDiv';
+  degree.appendChild(boxDeatailsDiv);
+  boxDeatailsDiv.appendChild(textDeatailsDiv);
+  if (data.list) {
+      console.log(data.list[1])
+      const temperature = data.list[1].main.temp;
+      const feelsLike = data.list[1].main.feels_like;
+      const formulaDegree = (temperature) - 273.15; //convert kelfins in degrees Celsius by formula C = x - K
+     const formulaFeelsLike = (feelsLike) - 273.15;
+      const resultFormula = (formulaDegree.toFixed(1) + '°');
+      const resultFormulaFeelsLike = (formulaFeelsLike.toFixed(1) + '°');
+    const resultTextFormula = (`18:00 Temperature: ${resultFormula} | Feels like: ${resultFormulaFeelsLike}`);
+     textDeatailsDiv.innerHTML = resultTextFormula;
+}};
+
+function getHours21(data) {
+  const textDeatailsDiv = document.createElement('li');
+  const boxDeatailsDiv = document.getElementById('boxDeatailsDiv');
+  textDeatailsDiv.classList = 'textDeatailsDegree';
+  degree.appendChild(boxDeatailsDiv);
+  boxDeatailsDiv.appendChild(textDeatailsDiv);
+  if (data.list) {
+      const temperature = data.list[2].main.temp;
+      const feelsLike = data.list[2].main.feels_like;
+      const formulaDegree = (temperature) - 273.15; //convert kelfins in degrees Celsius by formula C = x - K
+      const formulaFeelsLike = (feelsLike) - 273.15;
+      const resultFormula = (formulaDegree.toFixed(1) + '°');
+      const resultFormulaFeelsLike = (formulaFeelsLike.toFixed(1) + '°');
+      const resultTextFormula = (`21:00 Temperature: ${resultFormula} | Feels like: ${resultFormulaFeelsLike}`);
+     textDeatailsDiv.innerHTML = resultTextFormula;
+}};
+
+function getHours00(data) {
+  const textDeatailsDiv = document.createElement('li');
+  const boxDeatailsDiv = document.getElementById('boxDeatailsDiv');
+  textDeatailsDiv.classList = 'textDeatailsDegree';
+  degree.appendChild(boxDeatailsDiv);
+  boxDeatailsDiv.appendChild(textDeatailsDiv);
+  if (data.list) {
+      const temperature = data.list[3].main.temp;
+      const feelsLike = data.list[3].main.feels_like;
+      const formulaDegree = (temperature) - 273.15; //convert kelfins in degrees Celsius by formula C = x - K
+      const formulaFeelsLike = (feelsLike) - 273.15;
+      const resultFormula = (formulaDegree.toFixed(1) + '°');
+      const resultFormulaFeelsLike = (formulaFeelsLike.toFixed(1) + '°');
+      const resultTextFormula = (`00:00 Temperature: ${resultFormula} | Feels like: ${resultFormulaFeelsLike}`);
+     textDeatailsDiv.innerHTML = resultTextFormula;
+}};
+
+const render = (data) => {
+  const temperatureElement = document.getElementById('temperature');
+  const feelsLikeElement = document.getElementById('feels-like');
+
+  temperatureElement.textContent = data.main.temp;
+  feelsLikeElement.textContent = data.main.feels_like;
+};
+render

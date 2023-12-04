@@ -3,10 +3,10 @@
 }
 .weather {
     display: grid;
-    grid-template-rows: 1fr 11fr;
+    grid-template-rows: 1fr 17fr;
     grid-auto-rows: 150px;
     width: 500px;
-    height: 400px;
+    height: 600px;
     border: 1px solid black;
     background: linear-gradient(to top, rgb(245, 241, 241), 20%, rgb(131, 226, 226));
 }
@@ -203,10 +203,17 @@ input::placeholder {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
 }
+.boxDeatailsDiv {
+    margin: 0;
+    padding-left: 20px;
+}
 .textDeatailsDiv {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0;
     padding: 0;
+}
+.textDeatailsDegree {
+    list-style-type: none;
 }
