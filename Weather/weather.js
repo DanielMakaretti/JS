@@ -1,11 +1,14 @@
 import { createAddElement, moduleThenData,
      changeWeatherSnow, changeWeatherСloudy, changeWeatherRain, changeWeatherClear, giveDataFeelslike, giveDataSunrise,
-     giveDataSunset, getHours18, getHours21, getHours00} from './ModuleWeather.js';
+     giveDataSunset, getHours18, getHours21, getHours00, closeDegree} from './ModuleWeather.js';
+import {cityResultText, addLocalStorageCity} from './localStorage.js'      
 
+addLocalStorageCity()
 const imgButton = document.getElementById('degree_location-img');
 if (imgButton) {
 imgButton.addEventListener('click', createAddElement);
 };
+imgButton.addEventListener('click', cityResultText);
 
 const findCityWeather = (event) => {
     event.preventDefault()
@@ -29,6 +32,7 @@ const findCityWeather = (event) => {
            giveDataFeelslike(data)
            giveDataSunrise(data)
            giveDataSunset(data)
+           closeDegree(data)
         })
         .catch(error => {
             console.error('Ошибка, ебланка:', error)
@@ -48,7 +52,6 @@ const findCityWeather = (event) => {
            getHours18(data)
            getHours21(data)
            getHours00(data)
-           getFeelsLike18(data)
         })
         .catch(error => {
             console.error('Ошибка, ебланка:', error)
@@ -77,10 +80,10 @@ weatherForm.addEventListener('submit', findCityWeather);
 
 
 
-    //   document.addEventListener('DOMContentLoaded', () => {
-    // const closeButton = document.getElementById('button_test');//delete CityLocation
-    // closeButton.addEventListener('click', deleteCityLocation);
-    //   });
+//       document.addEventListener('DOMContentLoaded', () => {
+//     const closeButton = document.getElementById('button_test');//delete CityLocation
+//     closeButton.addEventListener('click', deleteCityLocation);
+//       });
     
 //     const backDetailsList = () => {
 //         const childDiv =  document.getElementById('childDiv');
@@ -94,3 +97,4 @@ weatherForm.addEventListener('submit', findCityWeather);
 //     const backButton = document.getElementById('backButton');//back list button
 //     backButton.addEventListener('click', backDetailsList);
 // });
+

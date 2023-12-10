@@ -1,7 +1,7 @@
 
 export { createAddElement, moduleThenData, deleteCityLocation, changeWeatherSnow,
    changeWeatherСloudy, changeWeatherRain, changeWeatherClear, giveDataFeelslike, giveDataSunrise,
-   giveDataSunset, deleteTextForm, getHours18, getHours21, getHours00};
+   giveDataSunset, deleteTextForm, getHours18, getHours21, getHours00, closeDegree};
    const cityLocations = document.getElementById('city_locations-inner');
    const locationText = document.getElementById('degree_location-text');
    const temperature = document.getElementById('temperature');
@@ -262,3 +262,11 @@ const render = (data) => {
   feelsLikeElement.textContent = data.main.feels_like;
 };
 render
+
+
+function closeDegree(data) {
+  const input = document.getElementById('label_form')
+  console.log(locationText.textContent)
+  if (input.textContent === data.name)
+  console.log('Yep');
+}
